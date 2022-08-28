@@ -832,6 +832,10 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:visible {
+    visibility: visible;
+  }
+
   .lg\:col-span-3 {
     grid-column: span 3 / span 3;
   }
