@@ -264,7 +264,7 @@ function App() {
             )}
             {!restrictedView && (
               <button
-                className="small-screen__button flex items-center py-2 px-4 rounded bg-lime-400 focus:outline focus:outline-1 outline-offset-2 outline-lime-500 text-lime-900 text-sm font-medium"
+                className="small-screen__button flex items-center py-2 px-4 rounded bg-green-400 focus:outline focus:outline-1 outline-offset-2 outline-green-500 text-green-900 text-sm font-medium"
                 onClick={() => setRestrictedView(false)}
               >
                 <span>Continue</span>
