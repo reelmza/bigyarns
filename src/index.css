@@ -104,7 +104,7 @@ body {
 .canvas-profile-pic {
   height: 12vmin;
   width: 12vmin;
-  background: url("/src/images/dp.jpg") center;
+  background: url("images/dp.jpg");
   background-size: contain;
 }
 
