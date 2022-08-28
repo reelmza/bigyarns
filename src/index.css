@@ -1,35 +1,177 @@
 html {
   height: 100%;
 }
+
 body {
   height: 100%;
 }
+
 .main {
   height: 100%;
 }
 
-.output-options__buttons button {
+.content {
+  position: relative;
+  background: linear-gradient(35deg, rgb(226, 220, 220), #fff);
+}
+
+.blury-gradient {
+  position: fixed;
+  top: -10%;
+  right: -10%;
+  transform: translate(-50%, 0%);
+  width: 400px;
+  height: 400px;
+  border-radius: 50% 15% 40% 80%;
+  filter: blur(100px);
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(255, 245, 155),
+    rgba(240, 234, 252, 0)
+  );
+  opacity: 0.5;
+}
+
+.blur-2 {
+  top: -10%;
+  left: -0%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(78, 184, 255),
+    rgba(240, 234, 252, 0)
+  );
+}
+
+.display-box,
+.options-box {
+  z-index: 2;
+}
+
+.controls-options__buttons button.bg-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 3.8vmin;
+  margin-bottom: 4vmin;
   border-radius: 5px;
+  color: #e5e7eb;
+  background: #111827;
+  width: 47%;
+}
+
+.controls-options__buttons button.bg-button svg {
+  margin-left: 5px;
+}
+
+.controls-options__buttons button.bg-button.active {
+  background: #374151;
+}
+
+.options-box__download span {
+  margin-left: 0.5vmin;
+}
+
+.canvas {
+  position: relative;
   color: #fff;
+  width: 720px;
+  height: 430px;
+  padding: 0 10%;
+}
+
+.canvas--export {
+  padding: 0 100px;
+  width: 720px;
+  height: 430px;
+}
+
+.canvas--export div.canvas-profile-pic {
+  height: 58px;
+  width: 58px;
+}
+
+.canvas-text-wrapper {
+  z-index: 1;
+  position: absolute;
+  padding: 10%;
+}
+
+.canvas-header {
+  height: 8vmin;
+  z-index: 2;
+}
+
+.canvas-profile-pic {
+  height: 12vmin;
+  width: 12vmin;
+  background: url("./images/dp.jpg") center;
+  background-size: contain;
+}
+
+.overlay {
   background: #000;
-  width: 48%;
+  opacity: 0.7;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
-.output-options__buttons button svg {
-  margin-left: 5px;
+#outputImage {
+  position: absolute;
+  top: 5vmin;
+  z-index: 4;
 }
 
-.output-options__buttons button.active {
-  background: #9747ff;
+/* Tablets */
+@media only screen and (min-width: 768px) {
+  .display-box {
+    height: 50%;
+  }
+
+  .options-box {
+    height: 50%;
+  }
+  .controls-options {
+    width: 40%;
+  }
+
+  .controls-options__buttons button.bg-button {
+    padding: 2vmin;
+    margin-bottom: 2vmin;
+    width: 47%;
+  }
+
+  .canvas-profile-pic {
+    height: 7vmin;
+    width: 7vmin;
+  }
 }
 
-.options-box__next-button {
-  color: #9747ff;
-}
+/* Laptop Screen */
+@media only screen and (min-width: 1024px) {
+  .display-box {
+    height: 100%;
+  }
 
-.options-box__next-button svg {
-  margin-left: 5px;
+  .options-box {
+    height: fit-content;
+  }
+
+  .controls-options__buttons button {
+    padding: 2.5vmin;
+    margin-bottom: 0;
+  }
+
+  .controls-options {
+    width: 100%;
+  }
+
+  .canvas-profile-pic {
+    height: 8vmin;
+    width: 8vmin;
+  }
 }
