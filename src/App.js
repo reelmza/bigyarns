@@ -256,7 +256,7 @@ function App() {
           <div className="small-screen__button-wrapper justify-center flex w-full">
             {!restrictedView && (
               <button
-                className="small-screen__button flex items-center mr-5 py-2 px-4 font-medium text-sm"
+                className="small-screen__button flex items-center mr-5 py-4 px-4 font-medium text-sm"
                 onClick={() => setRestrictedView(true)}
               >
                 <span>Cancel</span>
@@ -264,7 +264,7 @@ function App() {
             )}
             {!restrictedView && (
               <button
-                className="small-screen__button flex items-center py-2 px-4 rounded bg-lime-400 focus:outline focus:outline-1 outline-offset-2 outline-lime-500 text-lime-900 text-sm font-medium"
+                className="small-screen__button flex items-center py-4 px-4 rounded bg-lime-400 focus:outline focus:outline-1 outline-offset-2 outline-lime-500 text-lime-900 text-sm font-medium"
                 onClick={() => setRestrictedView(false)}
               >
                 <span>Continue</span>
