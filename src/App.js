@@ -291,8 +291,8 @@ function App() {
         ""
       )}
 
-      {restrictedView == null && <div className="blury-gradient"></div>}
-      {restrictedView == null && <div className="blury-gradient blur-2"></div>}
+      <div className="blury-gradient hidden lg:block"></div>
+      <div className="blury-gradient blur-2 hidden lg:block"></div>
     </div>
   );
 }
