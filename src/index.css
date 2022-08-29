@@ -37,7 +37,7 @@ body {
   left: -0%;
   background: radial-gradient(
     circle at 50% 50%,
-    rgb(78, 184, 255),
+    rgb(78, 255, 122),
     rgba(240, 234, 252, 0)
   );
 }
@@ -51,20 +51,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 3.8vmin;
+  padding: 3vmin;
   margin-bottom: 4vmin;
   border-radius: 5px;
-  color: #e5e7eb;
-  background: #111827;
+  color: rgb(68, 68, 68);
+  background: #f7f6f6;
   width: 47%;
+}
+
+.controls-options__buttons button.bg-button svg path {
+  fill: #14532d;
 }
 
 .controls-options__buttons button.bg-button svg {
   margin-left: 5px;
+  margin-top: 3px;
 }
 
 .controls-options__buttons button.bg-button.active {
-  background: #374151;
+  background: #4ade80;
+  color: #14532d;
 }
 
 .options-box__download span {
