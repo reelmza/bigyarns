@@ -24,7 +24,9 @@ function App() {
   };
   const capture = () => {
     document.getElementById("canvas").classList.add("canvas--export");
-    document.getElementById("canvas-profile-details").style.marginTop = "-14%";
+    document.getElementById("canvas-profile-details").style.marginTop = "-15%";
+    document.getElementById("verify-icon").classList.add("mt-[24px]");
+    document.getElementById("profile-username").classList.add("mt-[-4px]");
 
     html2canvas(document.getElementById("canvas"), {
       useCORS: true,
@@ -38,6 +40,8 @@ function App() {
 
       document.getElementById("canvas").classList.remove("canvas--export");
       document.getElementById("canvas-profile-details").style.marginTop = "0";
+      document.getElementById("verify-icon").classList.remove("mt-[24px]");
+      document.getElementById("profile-username").classList.remove("mt-[-4px]");
     });
   };
   return (
@@ -45,7 +49,7 @@ function App() {
       {restrictedView == null || restrictedView === false ? (
         <div
           className={
-            "options-box h-full lg:rounded-xl lg:flex flex-col justify-center lg:col-span-3 px-8 md:px-14 lg:px-8 py-8 md:py-8 lg:py-8 bg-white shadow-lg " +
+            "options-box min-h-full lg:rounded-xl lg:flex flex-col justify-center lg:col-span-3 px-8 md:px-14 lg:px-8 py-8 md:py-8 lg:py-8 bg-white shadow-lg " +
             (restrictedView === true || restrictedView == null
               ? "hidden"
               : "flex")
@@ -78,6 +82,7 @@ function App() {
               <textarea
                 className="w-full h-48 lg:h-32 border p-2 outline-0"
                 onChange={(e) => recordText(e)}
+                maxlength="100"
               ></textarea>
             </div>
             <div className="controls-options flex flex-col md:ml-5 lg:ml-0">
@@ -91,7 +96,7 @@ function App() {
                   }
                   onClick={() => toggleStyle("solid")}
                 >
-                  <span>Solid</span>
+                  <span className="font-medium">Solid</span>
                   <svg
                     width="12"
                     height="12"
@@ -113,7 +118,7 @@ function App() {
                   }
                   onClick={() => toggleStyle("twitter")}
                 >
-                  <span>Twitter</span>
+                  <span className="font-medium">Twitter</span>
                   <svg
                     width="14"
                     height="10"
@@ -136,7 +141,7 @@ function App() {
                   }
                   onClick={() => toggleStyle("gradient")}
                 >
-                  <span>Gradient</span>
+                  <span className="font-medium">Gradient</span>
                   <svg
                     width="12"
                     height="12"
@@ -158,7 +163,7 @@ function App() {
                   }
                   onClick={() => toggleStyle("picture")}
                 >
-                  <span>Picture</span>
+                  <span className="font-medium">Picture</span>
                   <svg
                     width="12"
                     height="9"
@@ -173,7 +178,7 @@ function App() {
                 </button>
 
                 <button
-                  className="options-box__download flex items-center md:justify-center w-fit md:w-full px-5 py-3 mt-14 md:mt-0 lg:mt-5 rounded-md bg-green-400 focus:outline focus:outline-2 outline-offset-2 outline-green-500 text-green-900"
+                  className="options-box__download flex items-center justify-center md:justify-center w-[47%] md:w-full py-[3vmin] mt-12 md:mt-0 lg:mt-5 rounded-md bg-emerald-400 focus:outline focus:outline-2 outline-offset-2 outline-emerald-500 text-emerald-900"
                   onClick={() => capture()}
                 >
                   <svg
@@ -192,9 +197,30 @@ function App() {
                     <polyline points="7 10 12 15 17 10"></polyline>
                     <line x1="12" y1="15" x2="12" y2="3"></line>
                   </svg>
-                  <span className="font-medium">SAVE IMAGE</span>
+                  <span className="font-medium">Save Image</span>
                 </button>
               </div>
+            </div>
+            <div className="controls-info flex items-center md:hidden mt-5 text-xs">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-alert-circle mr-2"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <p className="leading-[100%]">
+                Preview below, normal format reverted <br /> after you download.
+              </p>
             </div>
           </div>
         </div>
@@ -222,16 +248,34 @@ function App() {
               }
             ></div>
             <div className="canvas-text-wrapper w-full">
-              <div className="canvas-header flex items-center w-fit">
+              <div className="canvas-header flex items-center justify-start w-fit ">
                 <div className="canvas-profile-pic rounded-full"></div>
                 <div
                   className="canvas-profile-details ml-2"
                   id="canvas-profile-details"
                 >
-                  <h1 className="text-2xl font-normal leading-none">
-                    Big Yarns
-                  </h1>
-                  <p className="text-md mt-1 leading-none font-light ">
+                  <div className="flex items-center justify-center">
+                    <span className="text-2xl font-normal leading-none">
+                      Big Yarns
+                    </span>
+                    <div className="h-fit w-fit mt-1 ml-1" id="verify-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        version="1.1"
+                        viewBox="0,0,24,24"
+                        className="h-[20px] w-[20px]"
+                      >
+                        <path
+                          d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"
+                          fill="#1da1f2"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <p
+                    className="text-md mt-1 leading-none font-light"
+                    id="profile-username"
+                  >
                     @bigyarns_
                   </p>
                 </div>
@@ -265,7 +309,7 @@ function App() {
             )}
             {!restrictedView && (
               <button
-                className="small-screen__button flex items-center py-2 px-6 rounded bg-green-400 focus:outline focus:outline-1 outline-offset-2 outline-green-500 text-green-900  font-medium"
+                className="small-screen__button flex items-center py-2 px-6 rounded bg-emerald-400 focus:outline focus:outline-1 outline-offset-2 outline-emerald-500 text-emerald-900  font-medium"
                 onClick={() => setRestrictedView(false)}
               >
                 <span>Continue</span>
