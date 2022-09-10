@@ -295,8 +295,8 @@ function App() {
         <div className="small-screen h-full lg:hidden flex flex-col items-center justify-center p-12">
           <div className="small-screen__text text-center mb-8">
             {restrictedView
-              ? "Please exit the window."
-              : "This app isn't fully functional on this device, will you proceed anyways?"}
+              ? "Please exit the browser."
+              : "This app may misbehave on your device, will you proceed anyways?"}
           </div>
           <div className="small-screen__button-wrapper justify-center flex w-full">
             {!restrictedView && (
