@@ -1,6 +1,8 @@
 import { useState } from "react";
 import html2canvas from "html2canvas";
 function App() {
+  console.log(window.innerWidth, window.innerHeight);
+
   const [quoteText, setQuoteText] = useState("");
   const [activeStyle, setActiveStyle] = useState(["#222", "#fff"]);
   const [activeButton, setActiveButton] = useState("solid");
@@ -25,9 +27,9 @@ function App() {
     document.getElementById("canvas-profile-details").style.marginTop = "-14%";
 
     html2canvas(document.getElementById("canvas"), {
-      width: 720,
-      height: 430,
       useCORS: true,
+      windowWidth: 1367,
+      windowHeight: 656,
     }).then((canvas) => {
       let a = document.createElement("a");
       a.href = canvas.toDataURL("image/png");
