@@ -120,7 +120,11 @@ body {
   width: 12vmin;
 }
 .canvas--export div.verified-icon {
-  margin-top: 30px;
+  margin-top: 35px;
+}
+
+.canvas--export div.canvas-profile-username {
+  margin-top: -5px;
 }
 
 .overlay {
