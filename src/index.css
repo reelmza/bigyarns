@@ -82,22 +82,20 @@ body {
 }
 
 .canvas {
-  position: relative;
   color: #fff;
   width: 720px;
-  height: 430px;
+  height: 440px;
   padding: 0 10%;
 }
 
 .canvas--export {
-  padding: 0 100px;
   width: 720px;
-  height: 430px;
+  height: 440px;
+  padding: 0 10%;
 }
 
-.canvas--export div.canvas-profile-pic {
-  height: 58px;
-  width: 58px;
+.canvas--export .canvas-profile-details {
+  margin-top: -40px;
 }
 
 .canvas-text-wrapper {
@@ -107,15 +105,22 @@ body {
 }
 
 .canvas-header {
-  height: 8vmin;
   z-index: 2;
 }
 
 .canvas-profile-pic {
+  height: 15vmin;
+  width: 15vmin;
+  background: url("Images/dp.png") center;
+  background-size: contain;
+}
+
+.canvas--export div.canvas-profile-pic {
   height: 12vmin;
   width: 12vmin;
-  background: url("Images/dp.jpg");
-  background-size: contain;
+}
+.canvas--export div.verified-icon {
+  margin-top: 30px;
 }
 
 .overlay {
@@ -181,7 +186,7 @@ body {
   }
 
   .canvas-profile-pic {
-    height: 8vmin;
-    width: 8vmin;
+    height: 10vmin;
+    width: 10vmin;
   }
 }
