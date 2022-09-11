@@ -237,8 +237,8 @@ function App() {
                 <line x1="12" y1="16" x2="12.01" y2="16"></line>
               </svg>
               <p className="leading-[100%]">
-                Mobile previews may offset layouts, but final image <br />
-                files are accurate.
+                Mobile previews may offset layouts, but image files are
+                accurate.
               </p>
             </div>
           </div>
