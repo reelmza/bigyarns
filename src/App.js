@@ -272,7 +272,7 @@ function App() {
                 <div className="canvas-profile-pic rounded-full"></div>
                 <div className="canvas-profile-details flex flex-col h-full ml-4 leading-none">
                   <div className="text-4xl flex items-center">
-                    <span className="">Big Yarns</span>
+                    <span className="">Yarns</span>
                     <div className="verified-icon ml-1 flex items-center h-fit w-fit">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -287,8 +287,8 @@ function App() {
                       </svg>
                     </div>
                   </div>
-                  <div className="canvas-profile-username text-xl">
-                    @bigyanrs_
+                  <div className="canvas-profile-username text-xl font-light">
+                    @bigyarns_app
                   </div>
                 </div>
               </div>
