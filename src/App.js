@@ -237,7 +237,8 @@ function App() {
                 <line x1="12" y1="16" x2="12.01" y2="16"></line>
               </svg>
               <p className="leading-[100%]">
-                Preview below, normal format reverted <br /> after you download.
+                Mobile previews may offset layouts, but final image <br />
+                files are accurate.
               </p>
             </div>
           </div>
