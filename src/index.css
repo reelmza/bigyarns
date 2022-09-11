@@ -84,13 +84,13 @@ body {
 .canvas {
   color: #fff;
   width: 720px;
-  height: 440px;
+  height: 480px;
   padding: 0 10%;
 }
 
 .canvas--export {
   width: 720px;
-  height: 440px;
+  height: 480px;
   padding: 0 10%;
 }
 

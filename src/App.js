@@ -30,7 +30,7 @@ function App() {
       windowWidth: 1367,
       windowHeight: 656,
       width: 720,
-      height: 440,
+      height: 480,
     }).then((canvas) => {
       let a = document.createElement("a");
       a.href = canvas.toDataURL("image/png");
@@ -270,7 +270,7 @@ function App() {
             <div className="canvas-text-wrapper w-full ">
               <div className="canvas-header flex items-center">
                 <div className="canvas-profile-pic rounded-full"></div>
-                <div className="canvas-profile-details flex flex-col h-full ml-3 leading-none">
+                <div className="canvas-profile-details flex flex-col h-full ml-4 leading-none">
                   <div className="text-4xl flex items-center">
                     <span className="">Big Yarns</span>
                     <div className="verified-icon ml-1 flex items-center h-fit w-fit">
@@ -292,7 +292,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <p className="canvas-text w-full text-3xl font-light">
+              <p className="canvas-text w-full text-3xl font-light mt-2">
                 {quoteText ||
                   "Success is nothing more than a few simple disciplines, practiced every day."}
               </p>
